@@ -38,6 +38,23 @@ namespace LeaveFlowAPI.Controllers
             return Ok(employee);
         }
 
+        // === READ LEAVE REQUESTS FOR EMPLOYEE ===
+        [HttpGet("{employeeId}/leaverequests")]
+        public async Task<ActionResult<IEnumerable<LeaveRequest>>> GetLeaveRequestsForEmployee(int employeeId)
+        {
+            var employeeExists = await _context.Employees.AnyAsync(e => e.Id == employeeId);
+            if (!employeeExists)
+            {
+                return NotFound("Employee not found.");
+            }
+
+            var requests = await _context.LeaveRequests
+                                         .Where(lr => lr.EmployeeId == employeeId)
+                                         .ToListAsync();
+
+            return Ok(requests);
+        }
+
         // === CREATE ===
         [HttpPost]
         public async Task<ActionResult<Employee>> CreateEmployee(Employee employee)
