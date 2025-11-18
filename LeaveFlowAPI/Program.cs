@@ -18,6 +18,7 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+builder.Services.AddScoped<ILeaveRequestRepository, LeaveRequestRepository>();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
