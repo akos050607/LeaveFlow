@@ -1,0 +1,30 @@
+<h2>Alkalmazottak Listája</h2>
+
+<div *ngIf="employees$ | async as employees; else loadingTemplate">
+
+  <table border="1" *ngIf="employees.length > 0">
+    <thead>
+      <tr>
+        <th>Név</th>
+        <th>Pozíció</th>
+        <th>Email</th>
+        <th>Szabadság (nap)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees">
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.position }}</td>
+        <td>{{ emp.email }}</td>
+        <td>{{ emp.remainingLeaveDays }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="employees.length === 0">Nincs megjeleníthető adat.</p>
+
+</div>
+
+<ng-template #loadingTemplate>
+  <p>Betöltés alatt...</p>
+</ng-template>
