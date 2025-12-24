@@ -1,6 +1,6 @@
 # 🏢 LeaveFlow - Corporate Attendance & Leave Management System
 
-![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?style=flat&logo=dotnet)
+![.NET](https://img.shields.io/badge/.NET-9.0-512BD4?style=flat&logo=dotnet)
 ![Angular](https://img.shields.io/badge/Angular-18+-DD0031?style=flat&logo=angular)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker)
